@@ -2,7 +2,6 @@
 
 # asdf-cocoapods [![Build](https://github.com/ronnnnn/asdf-cocoapods/actions/workflows/build.yml/badge.svg)](https://github.com/ronnnnn/asdf-cocoapods/actions/workflows/build.yml) [![Lint](https://github.com/ronnnnn/asdf-cocoapods/actions/workflows/lint.yml/badge.svg)](https://github.com/ronnnnn/asdf-cocoapods/actions/workflows/lint.yml)
 
-
 [cocoapods](https://cocoapods.org) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
@@ -16,10 +15,10 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- [Ruby](https://www.ruby-lang.org/en/) (>= 1.9)
+  - [RubyGems](https://rubygems.org/?locale=en): manage Ruby packages.
+- [Bundler](https://bundler.io): make downloaded cocoapods binary executable.
 
 # Install
 
