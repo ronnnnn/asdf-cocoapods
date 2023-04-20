@@ -16,14 +16,14 @@ fi
 
 # curl of REPO/releases/latest is expected to be a 302 to another URL
 # when no releases redirect_url="REPO/releases"
-# when there are releases redirect_url="REPO/releases/tag/v<VERSION>"
+# when there are releases redirect_url="REPO/releases/tag/<VERSION>"
 redirect_url=$(curl "${curl_opts[@]}" "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
 version=
 printf "redirect url: %s\n" "$redirect_url" >&2
 if [[ "$redirect_url" == "$GH_REPO/releases" ]]; then
 	version="$(list_all_versions | sort_versions | xargs echo | tail -n1)"
 else
-	version="$(printf "%s\n" "$redirect_url" | sed 's|.*/tag/v\?||')"
+	version="$(printf "%s\n" "$redirect_url" | sed 's/.*\///;s/>$//')"
 fi
 
 printf "%s\n" "$version"
