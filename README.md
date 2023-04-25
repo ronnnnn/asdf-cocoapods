@@ -20,6 +20,13 @@
   - [RubyGems](https://rubygems.org/?locale=en): manage Ruby packages.
 - [Bundler](https://bundler.io): make downloaded cocoapods binary executable.
 
+## Recommendation
+
+Use Ruby and Bundler installed via asdf.
+
+- [asdf-vm/asdf-ruby](https://github.com/asdf-vm/asdf-ruby)
+- [jonathanmorley/asdf-bundler](https://github.com/jonathanmorley/asdf-bundler)
+
 # Install
 
 Plugin:
