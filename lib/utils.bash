@@ -59,6 +59,7 @@ install_version() {
 		local tool_cmd
 		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
 
+		bundle config set path "vendor/bundle"
 		bundle install --gemfile="$install_path/Gemfile"
 
 		test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
