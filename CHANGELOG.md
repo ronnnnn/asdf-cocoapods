@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/ronnnnn/asdf-cocoapods/compare/v1.0.1...v1.0.2) (2024-08-06)
+
+
+### Bug Fixes
+
+* create bundle config on install path ([#8](https://github.com/ronnnnn/asdf-cocoapods/issues/8)) ([b432238](https://github.com/ronnnnn/asdf-cocoapods/commit/b432238ad1cfa60995b73e99b487449da09771d4))
+
 ## [1.0.1](https://github.com/ronnnnn/asdf-cocoapods/compare/v1.0.0...v1.0.1) (2023-04-25)
 
 
