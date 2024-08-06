@@ -56,11 +56,15 @@ install_version() {
 		mkdir -p "$install_path"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-		local tool_cmd
-		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+		local working_path=$(pwd)
 
-		bundle config set path "vendor/bundle"
-		bundle install --gemfile="$install_path/Gemfile"
+		cd "$install_path"
+		bundle config --local path "vendor/bundle"
+		bundle install
+
+		cd "$working_path"
+
+		local tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
 
 		test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
