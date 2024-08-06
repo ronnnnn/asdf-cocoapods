@@ -56,6 +56,33 @@ pod --version
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
+# Troubleshooting
+
+## Incompatibility Errors After Updating Ruby
+If you encounter errors like the following after updating your Ruby version and running `pod`, it's likely due to a dependency mismatch:
+
+```
+~/.asdf/installs/cocoapods/1.15.2/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.4/lib/bigdecimal.rb:4:in `require': linked to incompatible ~/.asdf/installs/ruby/3.3.3/lib/libruby.3.3.dylib - ~/.asdf/installs/cocoapods/1.15.2/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.4/lib/bigdecimal.bundle (LoadError)
+```
+
+CocoaPods uses Bundler to manage its dependencies. When you change Ruby versions, you need to redownload these dependencies to ensure compatibility.
+
+### Resolution
+
+1. Navigate to your CocoaPods installation directory:
+
+```bash
+cd ~/.asdf/installs/cocoapods/{version}  # Replace {version} with your installed version
+```
+
+2. Redownload and reinstall the dependencies:
+
+```bash
+bundle install --redownload
+```
+
+Now you should be able to run `pod` commands without errors.
+
 # Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
