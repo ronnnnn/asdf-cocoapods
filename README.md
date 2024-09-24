@@ -59,6 +59,7 @@ install & manage versions.
 # Troubleshooting
 
 ## Incompatibility Errors After Updating Ruby
+
 If you encounter errors like the following after updating your Ruby version and running `pod`, it's likely due to a dependency mismatch:
 
 ```
@@ -69,19 +70,28 @@ CocoaPods uses Bundler to manage its dependencies. When you change Ruby versions
 
 ### Resolution
 
-1. Navigate to your CocoaPods installation directory:
+1. Set global Ruby version to your project's Ruby version:
+
+```bash
+asdf global ruby {version}  # Replace {version} with your project's Ruby version
+```
+
+2. Navigate to your CocoaPods installation directory:
 
 ```bash
 cd ~/.asdf/installs/cocoapods/{version}  # Replace {version} with your installed version
 ```
 
-2. Redownload and reinstall the dependencies:
+3. Redownload and reinstall the dependencies:
 
 ```bash
 bundle install --redownload
 ```
 
 Now you should be able to run `pod` commands without errors.
+
+If you still encounter issues, try reinstalling Ruby, Bundler, and CocoaPods.
+See also: https://github.com/ronnnnn/asdf-cocoapods/issues/7#issuecomment-1962783967
 
 # Contributing
 
