@@ -47,7 +47,7 @@ asdf list-all cocoapods
 asdf install cocoapods latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global cocoapods latest
+asdf set -u cocoapods latest
 
 # Now cocoapods commands are available
 pod --version
@@ -73,7 +73,7 @@ CocoaPods uses Bundler to manage its dependencies. When you change Ruby versions
 1. Set global Ruby version to your project's Ruby version:
 
 ```bash
-asdf global ruby {version}  # Replace {version} with your project's Ruby version
+asdf set -u ruby {version}  # Replace {version} with your project's Ruby version
 ```
 
 2. Navigate to your CocoaPods installation directory:
